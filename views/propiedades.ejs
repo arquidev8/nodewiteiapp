@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propiedades</title>
+    <style>
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            padding: 16px;
+            width: 300px;
+        }
+
+        .card img {
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 8px 0;
+        }
+
+        .card-info {
+            margin-bottom: 8px;
+        }
+
+        .card-info2 {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="card-container" class="card-container">
+        <% propiedades.forEach(propiedad => { %>
+          <a href="/propiedad/<%= propiedad.identifier %>" style="text-decoration: none; color: inherit;">
+            <div class="card">
+                <img src="<%= propiedad.pictures[0] %>" alt="<%= propiedad.title %>">
+                <div class="card-title" style="font-family: Montserrat; text-transform: capitalize;"><%= propiedad.title %></div>
+                <div class="card-info" style="font-family: Montserrat; ">id: <%= propiedad.identifier %></div>
+                <div class="card-info2" style="font-family: Montserrat; ">Baños: <div> <%= propiedad.bathrooms %> </div></div>
+                <div class="card-info2" style="font-family: Montserrat; " >Habitaciones: <div style="color: red;"> <%= propiedad.bedrooms %> <img src="https://i.postimg.cc/cJY80VML/hab.png" style="width: 40px; height: 40px; color: red;margin-top: 10px; margin-bottom: -8px;" /> </div></div>
+                <div class="card-info2" style="font-family: Montserrat; ">Precio: <div> <%= propiedad.selling_cost %> </div></div>
+            </div>
+        </a>
+        <% }); %>
+    </div>
+</body>
+</html>

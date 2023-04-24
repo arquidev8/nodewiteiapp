@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= detalle[0].title %></title>
+</head>
+<body>
+  <h1><%= detalle[0].title %></h1>
+  <% detalle[0].pictures.forEach(function(picture) { %>
+    <img src="<%= picture %>">
+  <% }); %>
+  <p><strong>ID:</strong> <%= detalle[0].identifier %></p>
+  <p><strong>Baños:</strong> <%= detalle[0].bathrooms %></p>
+  <p><strong>Habitaciones:</strong> <%= detalle[0].bedrooms %></p>
+  <p><strong>Precio:</strong> <%= detalle[0].selling_cost %></p>
+  <p><strong>Descripción:</strong> <%= detalle[0].description %></p>
+  <p><strong>Tipo de propiedad:</strong> <%= detalle[0].property_type %></p>
+  <p><strong>Área construida:</strong> <%= detalle[0].built_area %> m²</p>
+  <p><strong>Área del terreno:</strong> <%= detalle[0].land_area %> m²</p>
+  <p><strong>Ubicación:</strong> <%= detalle[0].address %></p>
+</body>
+</html>
